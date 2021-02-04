@@ -1,0 +1,40 @@
+@import 'https://necolas.github.io/normalize.css/8.0.1/normalize.css';
+
+body {
+	background: #333;
+	font-family: Arial, sans-serif;
+}
+
+.App {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	color: greenyellow;
+}
+
+.features {
+	/* list-style: none; */
+	margin: 0 auto;
+	text-align-last: left;
+}
+.features li {
+	margin: 5px;
+	padding: 5px;
+}
+
+.post {
+	margin: 10px;
+	padding: 10px;
+	border: 5px groove greenyellow;
+}
+
+code {
+	font-size: 18px;
+	color: orange;
+}
+
+a:hover,
+a:visited,
+a:active {
+	color: cyan;
+}
