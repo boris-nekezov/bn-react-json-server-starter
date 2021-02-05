@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
+const getPosts = async setPosts => {
+	const res = await fetch('/posts');
+	const data = await res.json();
+	setPosts(data);
+};
+
 const App = () => {
 	const [posts, setPosts] = useState([]);
 	useEffect(() => {
-		getPosts();
+		getPosts(setPosts);
 	}, []);
-
-	const getPosts = async () => {
-		const res = await fetch('/posts');
-		const data = await res.json();
-		setPosts(data);
-		console.log(posts);
-	};
 
 	return (
 		<div className="App">
@@ -41,7 +40,7 @@ const App = () => {
 			<hr />
 			<h2>Mock up data:</h2>
 			{posts.map(post => (
-				<div className="post">
+				<div key={post.id} className="post">
 					<h2>{post.title}</h2>
 					<p>{post.body}</p>
 				</div>
